@@ -21,6 +21,8 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended: false}))
 app.use("/auth", authRouter);
 
-app.listen(process.env.PORT, ()=>{
-    console.log(`Server listening on port: ${process.env.PORT}`)
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, ()=>{
+    console.log(`Server listening on port: ${PORT}`)
 });
