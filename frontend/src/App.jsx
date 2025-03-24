@@ -14,7 +14,7 @@ function App() {
   const [baseURL, setBaseURL] = useState('https://authenticator-app-5mss.onrender.com/');
 
   return (
-    <UserContextProvider baseURI={baseURL}>
+    <UserContextProvider baseURL={baseURL}>
       <div className='app-container'>
       <Header/>
       <Toaster position='bottom-right' toastOptions={
