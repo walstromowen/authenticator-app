@@ -30,8 +30,8 @@ function App() {
     }></Toaster>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/register' element={<Register baseURI={baseURL}/>}/>
-        <Route path='/login' element={<Login baseURI={baseURL}/>}/>
+        <Route path='/register' element={<Register baseURL={baseURL}/>}/>
+        <Route path='/login' element={<Login baseURL={baseURL}/>}/>
         <Route path='/dashboard' element={<Dashboard />}/>
       </Routes>
       </div>
