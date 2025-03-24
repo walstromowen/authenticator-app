@@ -8,7 +8,7 @@ const authRouter = express.Router();
 authRouter.use(
     cors({
         credentials: true,
-        origin: ["*", "https://authenticator-app-frontend.onrender.com/"],
+        origin: ["*", "https://authenticator-app-frontend.onrender.com/login"],
     })
 )
 
