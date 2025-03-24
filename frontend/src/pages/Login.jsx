@@ -16,7 +16,6 @@ export default function Login(props){
         const {username, password} = userParams;
         const url = `${baseURL}auth/login/`;
         try{
-            console.log(baseURL)
             const response = await fetch(url,  
                 {
                     method: "POST",

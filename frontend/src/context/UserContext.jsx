@@ -11,7 +11,7 @@ export function UserContextProvider(props){
     useEffect(()=>{
 
         async function fetchUser(){
-                const url = `${baseURL}/auth/profile/`; 
+                const url = `${baseURL}auth/profile/`; 
                 const response = await fetch(url, 
                     {
                         method: "GET",
