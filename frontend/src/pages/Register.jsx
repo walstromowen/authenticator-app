@@ -13,7 +13,7 @@ export default function Register(props){
     async function registerUser(e){
         e.preventDefault();
         const {username, email, password} = userParams;
-        const url = `${baseURL}auth/register/`;//make this statefull variable or switch to axios?
+        const url = `auth/register/`;//make this statefull variable or switch to axios?
         try{
             const response = await fetch(url,  
                 {

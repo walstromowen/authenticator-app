@@ -14,7 +14,7 @@ export default function Login(props){
     async function loginUser(e){
         e.preventDefault();
         const {username, password} = userParams;
-        const url = `${baseURL}auth/login/`;
+        const url = `auth/login/`;
         try{
             const response = await fetch(url,  
                 {
