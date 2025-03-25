@@ -4,7 +4,7 @@ import {toast} from 'react-hot-toast';
 import { UserContext } from "../context/UserContext"
 
 export default function Login(props){
-    const { setUser } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const {baseURL} = props;
     const navigate = useNavigate();
    
@@ -34,7 +34,7 @@ export default function Login(props){
             if(data.error){
                 toast.error(data.error)
             }else{
-                setUser(data.user)
+                setUser(user)
                 setUserParams({})
                 toast.success('Login Sucessful!')
                 navigate('/dashboard')
