@@ -6,7 +6,7 @@ export function UserContextProvider(props){
     const {baseURL, children} = props;
     const [user, setUser] = useState(null);
 
-    async function fetchUser(){
+    async function handleSetUser(){
         const url = `${baseURL}/auth/profile/`; 
         const response = await fetch(url, 
             {
@@ -24,14 +24,14 @@ export function UserContextProvider(props){
     }
 
     useEffect(()=>{
-        fetchUser()
+        handleSetUser()
     }, []);
 
 
 
 
     return(
-        <UserContext.Provider value={{user, setUser}}>
+        <UserContext.Provider value={{handleSetUser}}>
             {children}
         </UserContext.Provider>
     )
