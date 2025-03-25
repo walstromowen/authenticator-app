@@ -8,7 +8,6 @@ export default function Dashboard(){
     return(
         
         <div className='page-container'>
-            
             {!!user && (
                 <div className='form-container'>
                 <h2 className='form-header'>Hello {user.username}!</h2>
