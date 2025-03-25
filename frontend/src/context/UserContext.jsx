@@ -9,7 +9,7 @@ export function UserContextProvider(props){
     //const location = useLocation();
 
     useEffect(()=>{
-
+        alert('fire')
         async function fetchUser(){
                 const url = `${baseURL}/auth/profile/`; 
                 const response = await fetch(url, 

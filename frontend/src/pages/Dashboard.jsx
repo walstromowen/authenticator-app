@@ -6,7 +6,9 @@ export default function Dashboard(){
     const {user} = useContext(UserContext)
     
     return(
+        
         <div className='page-container'>
+            {user}
             {!!user && (
                 <div className='form-container'>
                 <h2 className='form-header'>Hello {user.username}!</h2>
