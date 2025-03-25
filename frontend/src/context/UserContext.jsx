@@ -20,7 +20,15 @@ export function UserContextProvider(props){
             }
         )
         const data = await response.json()
-        setUser(data)
+        
+        return new Promise((resolve, reject)=>{
+            if(data){
+                setUser(data)
+                resolve()
+            } 
+            else reject()
+        })
+    
     }
 
     useEffect(()=>{
