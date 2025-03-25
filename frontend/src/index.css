@@ -153,33 +153,44 @@ input:focus{
   background-color: rgb(20, 20, 20);
 }
 .home-header{
-  animation-name: violet-electric;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  color: var(--color-3);
-  text-shadow: 8px 8px 8px var(--color-2);
+  color: var(--color-2);
+  text-shadow: 
+    0 0 5px var(--color-2),
+    0 0 10px var(--color-2),
+    0 0 20px var(--color-2),
+    0 0 4px var(--color-2),
+    0 0 8px var(--color-2),
+    0 0 9px var(--color-2),
+    0 0 100px var(--color-2),
+    0 0 150px var(--color-2);
   font-size: 80px;
   font-family: monospace;
   word-wrap: break-word;
-}
-.animated-header{
-  animation-name: violet-electric;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-
+  text-transform: uppercase;
 }
 
-@keyframes violet-electric{
-  0%{
-    scale: 1.0;
-  }
-  50%{
-      
-      scale: 1.2;
-  }
-  100%{
-    scale: 1.0;
-  }
+.neon span{
+  animation: flicker 500ms infinite;
+
+}
+.neon .delay-1{
+  animation-delay: 0.8s
+}
+.neon .delay-2{
+  animation-delay: 1.4s
+}
+.neon .delay-3{
+  animation-delay: 1.8s
+}
+@keyframes flicker{
+  0%{opacity: 0;}
+  10%{scale: 1;}
+  20%{scale: 0;}
+  40%{scale: 1;}
+  50%{scale: 0;}
+  60%{scale: 1;}
+  80%{scale: 0;}
+  100%{scale: 1;}
 }
 
 @media only screen and (max-width: 880px) {
