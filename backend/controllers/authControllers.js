@@ -86,7 +86,6 @@ export async function getProfile(req, res){
                res.json(user)
           })
      }else{
-          res.send('no cookie')
           res.json(null)
      }
 }
