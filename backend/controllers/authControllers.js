@@ -65,7 +65,10 @@ export async function loginUser(req, res){
           if(match){
                jwt.sign({username: user.username, email: user.email, id: user._id}, process.env.JWT_SECRET, {}, (err, token)=>{
                     if(err) throw err;
-                    res.cookie('token', token).json(user)
+                    res.cookie('token', token, {
+                         sameSite: 'None',
+                         secure: true,
+                    }).json(user)
                })
           }
           if(!match){
