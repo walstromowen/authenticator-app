@@ -6,25 +6,24 @@ export function UserContextProvider(props){
     const {baseURL, children} = props;
     const [user, setUser] = useState(null);
 
+    async function fetchUser(){
+        const url = `${baseURL}/auth/profile/`; 
+        const response = await fetch(url, 
+            {
+                method: "GET",
+                credentials: 'include',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    
+                },
+            }
+        )
+        const data = await response.json()
+        setUser(data)
+    }
 
     useEffect(()=>{
-        async function fetchUser(){
-            const url = `${baseURL}/auth/profile/`; 
-            const response = await fetch(url, 
-                {
-                    method: "GET",
-                    credentials: 'include',
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "*",
-                        
-                    },
-                }
-            )
-            const data = await response.json()
-            setUser(data)
-        }
-
         fetchUser()
     }, []);
 
