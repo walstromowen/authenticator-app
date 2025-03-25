@@ -10,7 +10,6 @@ export function UserContextProvider(props){
 
     useEffect(()=>{
         async function fetchUser(){
-            console.log('fire')
                 const url = `${baseURL}/auth/profile/`; 
                 const response = await fetch(url, 
                     {
