@@ -23,7 +23,11 @@ app.use("/auth", authRouter);
 
 
 app.get('/*', (req, res)=>{
-    res.sendFile('https://authenticator-app-frontend.onrender.com/').status(500)
+    try{
+        res.sendFile('https://authenticator-app-frontend.onrender.com/').status(500)
+    }catch(err){
+        res.send(err)
+    }
 })
 
 const PORT = process.env.PORT || 5000;
