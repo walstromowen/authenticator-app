@@ -34,7 +34,7 @@ export default function Login(props){
             if(data.error){
                 toast.error(data.error)
             }else{
-                
+                console.log(data)
                 setUserParams({})
                 toast.success('Login Sucessful!')
                 navigate('/dashboard')
