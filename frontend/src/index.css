@@ -153,7 +153,7 @@ input:focus{
   background-color: rgb(20, 20, 20);
 }
 .home-header{
-  color: var(--color-2);
+  color: var(--color-3);
   text-shadow: 
     0 0 5px var(--color-2),
     0 0 10px var(--color-2),
@@ -164,7 +164,7 @@ input:focus{
     0 0 100px var(--color-2),
     0 0 150px var(--color-2);
   font-size: 80px;
-  font-family: monospace;
+  font-family: Helvetica, sans-serif;
   word-wrap: break-word;
   text-transform: uppercase;
 }
@@ -184,13 +184,13 @@ input:focus{
 }
 @keyframes flicker{
   0%{opacity: 0;}
-  10%{scale: 1;}
-  20%{scale: 0;}
-  40%{scale: 1;}
-  50%{scale: 0;}
-  60%{scale: 1;}
-  80%{scale: 0;}
-  100%{scale: 1;}
+  10%{opacity: 1;}
+  20%{opacity: 0;}
+  40%{opacity: 1;}
+  50%{opacity: 0;}
+  60%{opacity: 1;}
+  80%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
 @media only screen and (max-width: 880px) {
