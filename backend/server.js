@@ -21,6 +21,11 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended: false}))
 app.use("/auth", authRouter);
 
+
+app.get('/*', (req, res)=>{
+    res.sendFile('https://authenticator-app-frontend.onrender.com/').status(500)
+})
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, ()=>{

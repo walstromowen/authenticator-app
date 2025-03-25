@@ -84,7 +84,6 @@ export async function getProfile(req, res){
      if(token){
           jwt.verify(token, process.env.JWT_SECRET, {}, (err, user)=>{
                if(err) throw err;
-               console.log(user)
                res.json(user)
           })
      }else{
