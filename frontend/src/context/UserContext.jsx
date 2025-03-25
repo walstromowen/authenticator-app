@@ -8,6 +8,27 @@ export function UserContextProvider(props){
 
 
     useEffect(()=>{
+        if(!user){
+            const url = `${baseURL}/auth/profile/`; 
+            fetch(url, 
+                {
+                    method: "GET",
+                    credentials: 'include',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "*",
+                        
+                    },
+                }
+            ).then((data)=>{
+                setUser(data)
+            })
+        }
+    }, []);
+
+
+
+        /*
         async function fetchUser(){
             const url = `${baseURL}/auth/profile/`; 
             const response = await fetch(url, 
@@ -26,7 +47,8 @@ export function UserContextProvider(props){
         }
 
         fetchUser()
-    }, []);
+   
+    */
 
     return(
         <UserContext.Provider value={{user, setUser}}>
