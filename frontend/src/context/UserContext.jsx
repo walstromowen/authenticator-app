@@ -4,7 +4,7 @@ export const UserContext = createContext({});
 
 export function UserContextProvider(props){
     const {baseURL, children} = props;
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState('hi');
 
 
     useEffect(()=>{
@@ -24,6 +24,7 @@ export function UserContextProvider(props){
                 response.json()
             }).then((data)=>{
                 console.log(data)
+                setUser(data)
             })
         }
     }, []);
