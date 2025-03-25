@@ -21,8 +21,9 @@ export function UserContextProvider(props){
                     },
                 }
             ).then((response)=>{
-                console.log(response.json())
-                setUser(response.json())
+                response.json()
+            }).then((data)=>{
+                console.log(data)
             })
         }
     }, []);
