@@ -21,6 +21,7 @@ export function UserContextProvider(props){
                     },
                 }
             ).then((data)=>{
+                console.log(data)
                 setUser(data)
             })
         }
