@@ -8,12 +8,19 @@ export default function Dashboard(){
     return(
         
         <div className='page-container'>
-            {!!user && (
+            {!!user && ( <h2 className='form-header'>Hello {user.username}!</h2>)}
+        </div>
+    )
+}
+
+
+
+/*
+{!!user && (
                 <div className='form-container'>
                 <h2 className='form-header'>Hello {user.username}!</h2>
                 <p>Welcome to your dashboard authenticated with JWT</p>
                 </div>
             )}
-        </div>
-    )
-}
+
+*/
