@@ -170,7 +170,7 @@ input:focus{
 }
 
 .neon span{
-  animation: flicker 500ms infinite;
+  animation: flicker 5s infinite;
 
 }
 .neon .delay-1{
@@ -184,13 +184,13 @@ input:focus{
 }
 @keyframes flicker{
   0%{opacity: 0;}
+  1%{opacity: 1;}
+  2%{opacity: 0;}
+  4%{opacity: 1;}
+  5%{opacity: 0;}
+  6%{opacity: 1;}
+  8%{opacity: 0;}
   10%{opacity: 1;}
-  20%{opacity: 0;}
-  40%{opacity: 1;}
-  50%{opacity: 0;}
-  60%{opacity: 1;}
-  80%{opacity: 0;}
-  100%{opacity: 1;}
 }
 
 @media only screen and (max-width: 880px) {
