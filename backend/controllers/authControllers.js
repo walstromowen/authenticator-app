@@ -80,13 +80,13 @@ export async function loginUser(req, res){
 
 export async function getProfile(req, res){
      const {token} = req.cookies;
-     console.log(req.cookies)
      if(token){
           jwt.verify(token, process.env.JWT_SECRET, {}, (err, user)=>{
                if(err) throw err;
                res.json(user)
           })
      }else{
+          res.send('no cookie')
           res.json(null)
      }
 }

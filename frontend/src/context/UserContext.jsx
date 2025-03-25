@@ -4,7 +4,7 @@ export const UserContext = createContext({});
 
 export function UserContextProvider(props){
     const {baseURL, children} = props;
-    const [user, setUser] = useState('hi');
+    const [user, setUser] = useState(null);
 
 
     useEffect(()=>{
