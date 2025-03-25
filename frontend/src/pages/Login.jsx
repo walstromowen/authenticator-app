@@ -1,8 +1,11 @@
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom";
 import {toast} from 'react-hot-toast';
+import { UserContext } from "../context/UserContext"; 
+
 
 export default function Login(props){
+    const {fetchUser} = useContext(UserContext)
     const {baseURL} = props;
     const navigate = useNavigate();
    
@@ -33,6 +36,7 @@ export default function Login(props){
                 toast.error(data.error)
             }else{
                 setUserParams({})
+                fetchUser();
                 toast.success('Login Sucessful!')
                 navigate('/dashboard')
             }

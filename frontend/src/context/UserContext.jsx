@@ -8,6 +8,26 @@ export function UserContextProvider(props){
     const [user, setUser] = useState(null);
     //const location = useLocation();
 
+    async function fetchUser(){
+        const url = `${baseURL}/auth/profile/`; 
+        const response = await fetch(url, 
+            {
+                method: "GET",
+                credentials: 'include',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    
+                },
+            }
+        )
+        const data = await response.json()
+        console.log(data)
+        setUser(data)
+    }
+
+
+    /*
     useEffect(()=>{
         async function fetchUser(){
                 const url = `${baseURL}/auth/profile/`; 
@@ -29,9 +49,9 @@ export function UserContextProvider(props){
 
         fetchUser()
     }, []);
-
+*/
     return(
-        <UserContext.Provider value={{user, setUser}}>
+        <UserContext.Provider value={{user, setUser, fetchUser}}>
             {children}
         </UserContext.Provider>
     )
