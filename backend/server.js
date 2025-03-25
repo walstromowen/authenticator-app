@@ -24,7 +24,7 @@ app.use("/auth", authRouter);
 
 app.get('/*', (req, res)=>{
     try{
-        res.sendFile('https://authenticator-app-frontend.onrender.com/').status(500)
+        res.send('https://authenticator-app-frontend.onrender.com/')
     }catch(err){
         res.send(err)
     }
