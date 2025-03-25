@@ -31,7 +31,7 @@ export function UserContextProvider(props){
 
 
     return(
-        <UserContext.Provider value={{handleSetUser}}>
+        <UserContext.Provider value={{user, setUser, handleSetUser}}>
             {children}
         </UserContext.Provider>
     )
