@@ -1,12 +1,12 @@
 import {createContext, useState, useEffect} from 'react';
-import {useLocation} from "react-router-dom";
+//import {useLocation} from "react-router-dom";
 
 export const UserContext = createContext({});
 
 export function UserContextProvider(props){
     const {baseURL, children} = props;
     const [user, setUser] = useState(null);
-    const location = useLocation();
+    //const location = useLocation();
 
     useEffect(()=>{
 
@@ -28,7 +28,7 @@ export function UserContextProvider(props){
         }
 
         fetchUser()
-    }, [location]);
+    }, []);
 
     return(
         <UserContext.Provider value={{user, setUser}}>
