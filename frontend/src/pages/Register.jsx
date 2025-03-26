@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {toast} from 'react-hot-toast';
 
 export default function Register(props){
-    const {baseURL} = props;
+    const {baseURL, setIsLoading} = props;
     const navigate = useNavigate();
     const [userParams, setUserParams] = useState({
         email: '',
@@ -12,6 +12,7 @@ export default function Register(props){
     });
     async function registerUser(e){
         e.preventDefault();
+        setIsLoading(true)
         const {username, email, password} = userParams;
         const url = `${baseURL}/auth/register/`;
         try{
@@ -36,6 +37,7 @@ export default function Register(props){
         }catch(err){
             console.log(err)
         }
+        setIsLoading(false)
     }
     return(
         <div className='page-container'>
