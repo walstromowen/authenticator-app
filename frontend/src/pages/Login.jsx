@@ -5,7 +5,7 @@ import { UserContext } from "../context/UserContext"
 
 export default function Login(props){
     const { handleSetUser } = useContext(UserContext);
-    const {baseURL} = props;
+    const {baseURL, setIsLoading} = props;
     const navigate = useNavigate();
    
     const [userParams, setUserParams] = useState({
@@ -15,6 +15,7 @@ export default function Login(props){
 
     async function loginUser(e){
         e.preventDefault();
+        setIsLoading(true)
         const {username, password} = userParams;
         const url = `${baseURL}/auth/login/`;
         try{
@@ -32,16 +33,20 @@ export default function Login(props){
             )
             const data = await response.json();
             if(data.error){
+                setIsLoading(false)
                 toast.error(data.error)
             }else{
                 await handleSetUser()
                 setUserParams({})
-                toast.success('Login Sucessful!')
                 navigate('/dashboard')
+                toast.success('Login Sucessful!')
+                setIsLoading(false)
             }
         }catch(err){
+            setIsLoading(false)
             console.log(err)
         }
+        
     }
 
     return(
