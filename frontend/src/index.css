@@ -89,7 +89,7 @@ input{
   background-color:black;
   border: none;
   color: var(--color-3);
-  font-size: var(--font-size-4);
+  font-size: var(--font-size-5);
   outline: none;
  
   padding: 2px;
@@ -263,7 +263,7 @@ input:focus{
   :root{
     --font-size-1: 36px;
     --font-size-2: 24px;
-    --font-size-3: 20px;
+    --font-size-3: 18px;
     --font-size-4: 16px;
     --font-size-5: 14px;
   }
