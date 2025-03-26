@@ -3,6 +3,12 @@
   --color-2: violet;
   --color-3: white;
   --color-4: rgb(20 20 20);
+
+  --font-size-1: 60px;
+  --font-size-2: 36px;
+  --font-size-3: 30px;
+  --font-size-4: 24px;
+  --font-size-5: 18px;
 }
 
 *{
@@ -27,7 +33,7 @@
 .link{
   text-decoration: none;
   color:var(--color-3);
-  font-size: 30px;
+  font-size: var(--font-size-3);
 }
 .register-link{
   color:var(--color-3);
@@ -43,7 +49,7 @@
   text-shadow: 0px 8px 10px var(--color-2);
 }
 button{
-  font-size:24px;
+  font-size:var(--font-size-4);
   font-weight: bold;
   border-radius: 10px;
   padding: 10px;
@@ -59,20 +65,20 @@ button:hover{
 }
 h1{
   color: var(--color-3);
-  font-size:60px;
+  font-size:var(--font-size-1);
 }
 h2{
   color: var(--color-3);
-  font-size:36px;
+  font-size:var(--font-size-2);
   
 }
 h3{
   color: var(--color-3);
-  font-size:24px;
+  font-size:var(--font-size-4);
   width: 50%;
 }
 label{
-  font-size:24px;
+  font-size:var(--font-size-4);
   font-weight: bold;
   color: var(--color-3);
   margin-bottom: 8px;
@@ -83,7 +89,7 @@ input{
   background-color:black;
   border: none;
   color: var(--color-3);
-  font-size: 24px;
+  font-size: var(--font-size-4);
   outline: none;
  
   padding: 2px;
@@ -163,7 +169,7 @@ input:focus{
     0 0 9px var(--color-2),
     0 0 100px var(--color-2),
     0 0 150px var(--color-2);
-  font-size: 80px;
+ 
   font-family: Helvetica, sans-serif;
   word-wrap: break-word;
   text-transform: uppercase;
@@ -191,20 +197,6 @@ input:focus{
   6%{opacity: 1;}
   8%{opacity: 0;}
   10%{opacity: 1;}
-}
-
-@media only screen and (max-width: 880px) {
-  .form-container{
-    width: 320px;
-  }
-  .home-header{
-    font-size: 36px;
-    width: min-content;
-    text-align: center;
-  }
-  input{
-    font-size: 18px;
-  }
 }
 
 .spinner{
@@ -246,5 +238,36 @@ input:focus{
 @keyframes spin{
   to {
     transform: rotate(360deg)
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  :root{
+    --font-size-1: 48px;
+    --font-size-2: 30px;
+    --font-size-3: 24px;
+    --font-size-4: 18px;
+    --font-size-5: 16px;
+  }
+  .form-container{
+    min-width: 320px;
+  }
+  .home-header{
+    font-size: var(--font-size-2);
+    width: min-content;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  :root{
+    --font-size-1: 36px;
+    --font-size-2: 24px;
+    --font-size-3: 28px;
+    --font-size-4: 26px;
+    --font-size-5: 14px;
+  }
+  .form-container{
+    min-width: 280px;
   }
 }
